@@ -1,0 +1,8 @@
+*.pyc
+__pycache__
+venv
+db.sqlite3
+/media_cdn
+/static_cdn
+settings_secret.py
+.DS_Store

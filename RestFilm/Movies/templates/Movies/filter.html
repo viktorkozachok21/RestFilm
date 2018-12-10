@@ -1,0 +1,161 @@
+{% extends 'index.html' %}
+{% load i18n %}
+
+
+
+{% block title %}
+RestFilm
+{% endblock %}
+
+{% block random_movie %}
+href="{% url 'watch' slug=random_movie%}"
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark lighten-3">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nextNav" aria-controls="nextNav" aria-expanded="false" aria-label="Toggle navigation">
+      <h3 class="p-1 waves-effect">{% trans "Categories:" %}</h3>
+  </button>
+  <section class="collapse navbar-collapse text-center" id="nextNav">
+    <ul class="nav row justify-content-center">
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Detective" as Detective %}
+        <a href="{% url 'filter' slug=Detective %}" class="nav-link text-center">{% trans "Detective" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Action" as Action %}
+        <a href="{% url 'filter' slug=Action %}" class="nav-link">{% trans "Action" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Comedy" as Comedy %}
+        <a href="{% url 'filter' slug=Comedy %}" class="nav-link">{% trans "Comedy" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Drama" as Drama %}
+        <a href="{% url 'filter' slug=Drama %}" class="nav-link">{% trans "Drama" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Adventures" as Adventures %}
+        <a href="{% url 'filter' slug=Adventures %}" class="nav-link">{% trans "Adventures" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Family" as Family %}
+        <a href="{% url 'filter' slug=Family %}" class="nav-link">{% trans "Family" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Fantasy" as Fantasy %}
+        <a href="{% url 'filter' slug=Fantasy %}" class="nav-link">{% trans "Fantasy" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Musical" as Musical %}
+        <a href="{% url 'filter' slug=Musical %}" class="nav-link">{% trans "Musical" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Biography" as Biography %}
+        <a href="{% url 'filter' slug=Biography %}" class="nav-link">{% trans "Biography" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Hystory" as Hystory %}
+        <a href="{% url 'filter' slug=Hystory %}" class="nav-link">{% trans "Hystory" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Documentary" as Documentary %}
+        <a href="{% url 'filter' slug=Documentary %}" class="nav-link">{% trans "Documentary" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Thriller" as Thriller %}
+        <a href="{% url 'filter' slug=Thriller %}" class="nav-link">{% trans "Thriller" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Sport" as Sport %}
+        <a href="{% url 'filter' slug=Sport %}" class="nav-link">{% trans "Sport" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Horror" as Horror %}
+        <a href="{% url 'filter' slug=Horror %}" class="nav-link">{% trans "Horror" %}</a>
+      </li>
+      <li class="nav-item col-lg-2 mx-3 m-1 border bordet-light waves-effect">
+        {% trans "Melodrama" as Melodrama %}
+        <a href="{% url 'filter' slug=Melodrama %}" class="nav-link">{% trans "Melodrama" %}</a>
+      </li>
+    </ul>
+    </section>
+  </nav>
+
+  <article class="text-center mb-3 mt-3">
+      <div class="row d-flex justify-content-center">
+        {% for film in movies %}
+          <div class="col-lg-2 col-md-6 mb-3 d-flex justify-content-center">
+              <div class="view overlay rounded z-depth-2">
+                  <a href="{% url 'watch' slug=film.title %}">
+                      <img src="{{ film.photo.url }}" class="img-fluid" alt="{{ film.film_name }}">
+                      <div class="mask flex-center rgba-black-strong">
+                      <p class="white-text">{{ film.film_name }}</p>
+                  </div>
+                  </a>
+              </div>
+          </div>
+        {% endfor %}
+      </div>
+  </article>
+
+  <article>
+      <nav class="paginator font-weight-bold  d-flex justify-content-center" aria-label="Page navigation example">
+        {% if movies.has_other_pages %}
+          <ul class="pagination pg-green">
+              {% if movies.has_previous %}
+                <li  class="page-item" ><a href="?page={{ movies.previous_page_number }}"><span class="page-link">&laquo;</span></a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+              {% endif %}
+              {% for p in movies.paginator.page_range %}
+                {% if movies.number == p %}
+                  <li class="page-item active"><span class="page-link" aria-hidden="true">{{ p }}<span class="sr-only">(current)</span></span></li>
+                {% else %}
+                  <li class="page-item"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+                {% endif %}
+              {% endfor %}
+              {% if movies.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ movies.next_page_number }}">&raquo;</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+              {% endif %}
+            {% endif %}
+          </ul>
+      </nav>
+  </article>
+
+  <footer>
+      <div class="accordion md-accordion accordion-1" id="accordionEx1" role="tablist">
+        {% for news in news_list %}
+          <div class="card">
+              <div class="card-header lighten-3 z-depth-1" role="tab" id="heading{{ news.id }}">
+                  <h5 class="text-uppercase mb-0 py-1">
+                      <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse{{ news.id }}" aria-expanded="true" aria-controls="collapse96">
+                          {{ news.title }}
+                      </a>
+                  </h5>
+              </div>
+              <div id="collapse{{ news.id }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ news.id }}" data-parent="#accordionEx1">
+                  <div class="card-body">
+                      <div class="row my-4">
+                          <div class="col-md-6">
+                              <p class="">{{ news.content|safe }}</p>
+                          </div>
+                          <div class="col-md">
+                              <div class="view z-depth-1">
+                                  <img src="{{ news.photo.url }}" alt="" class="img-fluid">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </footer>
+{% endblock %}
+
+</body>
+
+</html>

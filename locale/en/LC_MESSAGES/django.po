@@ -1,0 +1,285 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-09 16:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: RestFilm/Movies/templates/Movies/filter.html:17
+#: RestFilm/Movies/templates/Movies/home.html:17
+msgid "Categories:"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:22
+#: RestFilm/Movies/templates/Movies/filter.html:23
+#: RestFilm/Movies/templates/Movies/home.html:22
+#: RestFilm/Movies/templates/Movies/home.html:23
+msgid "Detective"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:26
+#: RestFilm/Movies/templates/Movies/filter.html:27
+#: RestFilm/Movies/templates/Movies/home.html:26
+#: RestFilm/Movies/templates/Movies/home.html:27
+msgid "Action"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:30
+#: RestFilm/Movies/templates/Movies/filter.html:31
+#: RestFilm/Movies/templates/Movies/home.html:30
+#: RestFilm/Movies/templates/Movies/home.html:31
+msgid "Comedy"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:34
+#: RestFilm/Movies/templates/Movies/filter.html:35
+#: RestFilm/Movies/templates/Movies/home.html:34
+#: RestFilm/Movies/templates/Movies/home.html:35
+msgid "Drama"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:38
+#: RestFilm/Movies/templates/Movies/filter.html:39
+#: RestFilm/Movies/templates/Movies/home.html:38
+#: RestFilm/Movies/templates/Movies/home.html:39
+msgid "Adventures"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:42
+#: RestFilm/Movies/templates/Movies/filter.html:43
+#: RestFilm/Movies/templates/Movies/home.html:42
+#: RestFilm/Movies/templates/Movies/home.html:43
+msgid "Family"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:46
+#: RestFilm/Movies/templates/Movies/filter.html:47
+#: RestFilm/Movies/templates/Movies/home.html:46
+#: RestFilm/Movies/templates/Movies/home.html:47
+msgid "Fantasy"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:50
+#: RestFilm/Movies/templates/Movies/filter.html:51
+#: RestFilm/Movies/templates/Movies/home.html:50
+#: RestFilm/Movies/templates/Movies/home.html:51
+msgid "Musical"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:54
+#: RestFilm/Movies/templates/Movies/filter.html:55
+#: RestFilm/Movies/templates/Movies/home.html:54
+#: RestFilm/Movies/templates/Movies/home.html:55
+msgid "Biography"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:58
+#: RestFilm/Movies/templates/Movies/filter.html:59
+#: RestFilm/Movies/templates/Movies/home.html:58
+#: RestFilm/Movies/templates/Movies/home.html:59
+msgid "Hystory"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:62
+#: RestFilm/Movies/templates/Movies/filter.html:63
+#: RestFilm/Movies/templates/Movies/home.html:62
+#: RestFilm/Movies/templates/Movies/home.html:63
+msgid "Documentary"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:66
+#: RestFilm/Movies/templates/Movies/filter.html:67
+#: RestFilm/Movies/templates/Movies/home.html:66
+#: RestFilm/Movies/templates/Movies/home.html:67
+msgid "Thriller"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:70
+#: RestFilm/Movies/templates/Movies/filter.html:71
+#: RestFilm/Movies/templates/Movies/home.html:70
+#: RestFilm/Movies/templates/Movies/home.html:71
+msgid "Sport"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:74
+#: RestFilm/Movies/templates/Movies/filter.html:75
+#: RestFilm/Movies/templates/Movies/home.html:74
+#: RestFilm/Movies/templates/Movies/home.html:75
+msgid "Horror"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/filter.html:78
+#: RestFilm/Movies/templates/Movies/filter.html:79
+#: RestFilm/Movies/templates/Movies/home.html:78
+#: RestFilm/Movies/templates/Movies/home.html:79
+msgid "Melodrama"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/watch.html:29
+msgid "Online"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/watch.html:33
+msgid "Trailer"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/watch.html:51
+msgid "Comment"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/watch.html:59
+msgid "Add comment"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/watch.html:62
+msgid "Cancel"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/watch.html:63
+msgid "Reply"
+msgstr ""
+
+#: RestFilm/Movies/templates/Movies/watch.html:80
+#: RestFilm/templates/index.html:229
+msgid "Avatar"
+msgstr ""
+
+#: RestFilm/Movies/views.py:74 RestFilm/templates/index.html:38
+#: RestFilm/templates/index.html:39
+msgid "Novelty"
+msgstr ""
+
+#: RestFilm/Movies/views.py:78 RestFilm/templates/index.html:42
+#: RestFilm/templates/index.html:43
+msgid "Popular"
+msgstr ""
+
+#: RestFilm/RestFilm/settings.py:161
+msgid "Укр"
+msgstr ""
+
+#: RestFilm/RestFilm/settings.py:162
+msgid "Анг"
+msgstr ""
+
+#: RestFilm/templates/index.html:16 RestFilm/templates/index.html:31
+msgid "movies in HD quality online"
+msgstr ""
+
+#: RestFilm/templates/index.html:17
+msgid ""
+"фільми, серіали, мультфільми, онлайн, дивитися, українсько, безкоштовно, HD "
+"720, HD 1080"
+msgstr ""
+
+#: RestFilm/templates/index.html:29
+msgid "Movies in HD quality online"
+msgstr ""
+
+#: RestFilm/templates/index.html:39
+msgid "New films"
+msgstr ""
+
+#: RestFilm/templates/index.html:43
+msgid "Popular films"
+msgstr ""
+
+#: RestFilm/templates/index.html:46
+msgid "Random film"
+msgstr ""
+
+#: RestFilm/templates/index.html:46
+msgid "Random"
+msgstr ""
+
+#: RestFilm/templates/index.html:50
+msgid "Years"
+msgstr ""
+
+#: RestFilm/templates/index.html:100
+msgid "Search"
+msgstr ""
+
+#: RestFilm/templates/index.html:105
+msgid "Account"
+msgstr ""
+
+#: RestFilm/templates/index.html:115
+msgid "Language for the site"
+msgstr ""
+
+#: RestFilm/templates/index.html:137
+msgid "Get connected with us on social networks!"
+msgstr ""
+
+#: RestFilm/templates/index.html:173
+msgid "Rivne"
+msgstr ""
+
+#: RestFilm/templates/index.html:187
+msgid "Write to us"
+msgstr ""
+
+#: RestFilm/templates/index.html:198 RestFilm/templates/index.html:293
+msgid "Your name"
+msgstr ""
+
+#: RestFilm/templates/index.html:203 RestFilm/templates/index.html:253
+#: RestFilm/templates/index.html:298
+msgid "Your email"
+msgstr ""
+
+#: RestFilm/templates/index.html:208
+msgid "Subject"
+msgstr ""
+
+#: RestFilm/templates/index.html:213
+msgid "Your message"
+msgstr ""
+
+#: RestFilm/templates/index.html:217
+msgid "Send"
+msgstr ""
+
+#: RestFilm/templates/index.html:243 RestFilm/templates/index.html:260
+msgid "Log in"
+msgstr ""
+
+#: RestFilm/templates/index.html:257 RestFilm/templates/index.html:303
+msgid "Your password"
+msgstr ""
+
+#: RestFilm/templates/index.html:262
+#, python-format
+msgid ""
+"\n"
+"                    <p class=\"font-small dark-grey-text text-right d-flex "
+"justify-content-center mb-3 pt-2\">%(login)s</p>\n"
+"                    "
+msgstr ""
+
+#: RestFilm/templates/index.html:269
+msgid "Not a member?"
+msgstr ""
+
+#: RestFilm/templates/index.html:270 RestFilm/templates/index.html:282
+#: RestFilm/templates/index.html:308
+msgid "Sign in"
+msgstr ""
+
+#: RestFilm/templates/index.html:315 RestFilm/templates/index.html:316
+msgid "Go top"
+msgstr ""

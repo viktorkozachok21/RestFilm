@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+
+
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}- {% trans "movies in HD quality online" %}!</title>
+    <meta name="keywords" content="{% trans "фільми, серіали, мультфільми, онлайн, дивитися, українсько, безкоштовно, HD 720, HD 1080" %}">
+    <meta name="description" content>
+    <link rel="shortcut icon" href="{% static 'img/images/favicon.ico' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body style="background-image: url('{% static 'img/images/background.jpg' %}');">
+
+    <header>
+      <h1 class="h1-responsive font-weight-bold">{% trans "Movies in HD quality online" %}</h1>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top justify-content-between scrolling-navbar">
+            <a class="navbar-brand waves-effect" href="{% url 'home' %}" title="RestFilm - {% trans "movies in HD quality online" %}">RestFilm</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      {% trans "Novelty" as Novelty %}
+                        <a class="nav-link active" href="{% url 'filter' slug=Novelty %}" title="{% trans "New films" %}">{% trans "Novelty" %}</a>
+                    </li>
+                    <li class="nav-item">
+                      {% trans "Popular" as Popular %}
+                        <a class="nav-link" href="{% url 'filter' slug=Popular %}" title="{% trans "Popular films" %}">{% trans "Popular" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" {% block random_movie %}{% endblock %} title="{% trans "Random film" %}">{% trans "Random" %}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">{% trans "Years" %}</a>
+                      <div class="dropdown-menu dropdown-primary mx-0 p-3" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="row p-1">
+                          <a class="col nav-item text-center text-danger dropdown-item" href="{% url 'filter' slug='2019' %}">2019</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2018' %}">2018</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2017' %}">2017</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2016' %}">2016</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2015' %}">2015</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2014' %}">2014</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2013' %}">2013</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2012' %}">2012</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2011' %}">2011</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2010' %}">2010</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2009' %}">2009</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2008' %}">2008</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2007' %}">2007</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2006' %}">2006</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2005' %}">2005</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2004' %}">2004</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2003' %}">2003</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2002' %}">2002</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2001' %}">2001</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='2000' %}">2000</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='1999' %}">1999</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='1998' %}">1998</a>
+                        </div>
+                        <div class="row p-1">
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='1997' %}">1997</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='1996' %}">1996</a>
+                          <a class="col nav-item dropdown-item" href="{% url 'filter' slug='1995' %}">1995</a>
+                        </div>
+                      </div>
+                    </li>
+                </ul>
+                <form class="form-inline" action="{% url 'filter' slug='result' %}" method="get">
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" name="search" type="text" placeholder="{% trans "Search" %}" title="{% trans "Search" %}" aria-label="{% trans "Search" %}">
+                    </div>
+                </form>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item d-flex">
+                        <a href="" class="nav-link waves-effect waves-light" title="{% trans "Account" %}" data-toggle="modal" data-target="#elegantModalForm">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      {% for language in languages %}
+                        {% if language.code != LANGUAGE_CODE %}
+                          <form action="{% url 'set_language' %}" method="post"> {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ request.get_current_url }}" />
+                            <input name="language" type="hidden" value="{{ language.code }}" />
+                            <button type="submit" style="background-color: #7777;" class="btn nav-link waves-effect waves-light" title="{% trans "Language for the site" %}">
+                              <span>{{ language.code|upper }}</span>
+                            </button>
+                          </form>
+                        {% endif %}
+                      {% endfor %}
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+{% block content %}
+{% endblock %}
+    </main>
+
+    <footer class="page-footer font-small unique-color-dark">
+        <div style="background-color: #7a8777;">
+            <div class="container">
+                <div class="row py-4 d-flex align-items-center">
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0">{% trans "Get connected with us on social networks!" %}</h6>
+                    </div>
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+                        <a class="fb-ic" title="Telegram">
+                            <i class="fa fa-telegram white-text mr-4"> </i>
+                        </a>
+                        <a class="gplus-ic" title="Google+">
+                            <i class="fa fa-google-plus white-text mr-4"> </i>
+                        </a>
+                        <a class="li-ic" title="GitHub">
+                            <i class="fa fa-github white-text mr-4"> </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center text-md-left mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a>
+                            About us
+                        </a>
+                    </h6>
+                    <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a>
+                            Contact
+                        </a>
+                    </h6>
+                    <hr class="green accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> {% trans "Rivne" %}</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> viktorkozachok21@gmail.com</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> 096 1237 959</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  {% if user.is_authenticated %}
+  <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <img src="{% static 'img/images/user-man.png' %}" alt="{% trans "Avatar" %}" class="rounded-circle unique-color-dark img-responsive">
+              </div>
+              <div class="modal-body text-center mb-1">
+                  <h5 class="mt-1 mb-1">{{ user.username }}</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, sint.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% else %}
+    <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content form-elegant">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">{% trans "Log in" %}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                  {% csrf_token %}
+                  <div class="modal-body">
+                    <div class="md-form mb-1">
+                        <input type="email" id="elegantForm-email" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="elegantForm-email">{% trans "Your email" %}</label>
+                    </div>
+                    <div class="md-form pb-1">
+                        <input type="password" id="elegantForm-pass" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="elegantForm-pass">{% trans "Your password" %}</label>
+                    </div>
+                    <div class="text-center mb-1">
+                        <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">{% trans "Log in" %}</button>
+                    </div>
+                    <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Log in with:</p>
+                        <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fa fa-google-plus"></i></button>
+                  </div>
+                </form>
+                <div class="modal-footer mx-1 pt-1 mb-1">
+                    <p class="font-small grey-text d-flex justify-content-end">{% trans "Not a member?" %}  <a href="#" class="blue-text ml-1" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#modalRegisterForm">
+                            {% trans "Sign in" %}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">{% trans "Sign in" %}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    {% csrf_token %}
+                    <div class="md-form mb-1">
+                        <i class="fa fa-user prefix grey-text"></i>
+                        <input type="text" id="orangeForm_name" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="orangeForm_name">{% trans "Your name" %}</label>
+                    </div>
+                    <div class="md-form mb-1">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="orangeForm_email" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="orangeForm_email">{% trans "Your email" %}</label>
+                    </div>
+                    <div class="md-form mb-1">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="orangeForm_pass" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="orangeForm_pass">{% trans "Your password" %}</label>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">{% trans "Sign in" %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="view zoom rounded z-depth-2">
+        <a href="#" id="go-top" title="{% trans "Go top" %}">
+            <img src="{% static 'img/images/go-up.png' %}" alt="{% trans "Go top" %}" class="img-fluid">
+        </a>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+</body>
+
+</html>

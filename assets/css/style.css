@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+body{
+  margin: 1%;
+  font-size: 1.1em;
+  margin-top: 10%;
+  text-align: center;
+  color: #7a8777;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Suez One', serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+aside{
+  display: flex;
+  justify-content: center;
+}
+section .nav-item{
+  background: rgba(0,0,0,.9);
+}
+section .nav-item:hover{
+  background: rgba(0,0,0,.3);
+}
+section .nav-link{
+  color: #7a8777;
+}
+section .nav-link:hover{
+  color: white;
+}
+header .navbar{
+  background: #7a8777;
+  border: 3px solid rgba(0,0,0,.5);
+}
+h3{
+  color: #7a8777;
+  background: rgba(0,0,0,.5);
+  border-radius: 3px;
+}
+header .navbar-brand{
+  font-size: 1.5em;
+  padding: 1%;
+}
+header .navbar-brand:hover{
+  background: rgba(0,0,0,.3)
+}
+header .nav-item{
+  margin: 1%;
+}
+header .active, .nav-item:hover{
+  background: rgba(0,0,0,.3)
+}
+main .navbar-brand{
+  display: none;
+}
+.carousel-item{
+  padding: 1%;
+  background: rgba(0,0,0,.5);
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+.h1-responsive{
+  margin: 1%;
+  padding: 1%;
+  background: rgba(0,0,0,.8);
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.5) inset, 0 1px 0 rgba(255,255,255,.2);
+}
+.view{
+  background: rgba(0,0,0,.8);
+}
+.paginator{
+  margin-top: 1%;
+}
+.accordion{
+  margin: 1% 0;
+}
+.card-header{
+  background: #7a8777;
+}
+#go-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  width: 50px;
+  height: 100px;
+}
+.media img{
+  height: 10%;
+  width: 10%;
+}
+
+@media screen and (max-width: 1000px){
+  body{
+    margin-top: 15%;
+  }
+  section .nav-item{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  body{
+    margin-top: 17%;
+  }
+}
