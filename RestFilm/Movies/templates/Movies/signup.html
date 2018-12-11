@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load i18n %}
+
+
+
+{% block meta %}
+="{% trans "Registration" %}"
+{% endblock %}
+
+{% block title %}
+{% trans "Registration" %}
+{% endblock %}
+
+{% block random_movie %}
+href="{% url 'watch' slug=random_movie%}"
+{% endblock %}
+
+{% block content %}
+<div class="container card font-weight-bold mb-3 text-center text-dark">
+    <div class="card-header m-3"><h2>{% trans "Registration" %}</h2></div>
+    <form class="signup p-3" method="POST">{% csrf_token %}
+    {% for field in form %}
+      <div class="form-group d-flex justify-content-center">
+      <div class="md-form mb-1">
+        {{ field.label_tag }}<br>
+        {{ field }}
+      </div>
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+      </div>
+    {% endfor %}
+    <div class="card-footer form-group d-flex justify-content-center m-1">
+      <button class="btn w-50 btn-block white-text unique-color-dark" type="submit">{% trans "Register" %}</button>
+    </div>
+    <p><a href="{% url 'signin' %}">{% trans "Log in" %}</a></p>
+</form>
+</div>
+{% endblock %}

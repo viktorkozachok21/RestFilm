@@ -3,6 +3,10 @@
 
 
 
+{% block meta %}
+="{{ slug_meta }}"
+{% endblock %}
+
 {% block title %}
 RestFilm
 {% endblock %}
@@ -155,7 +159,3 @@ href="{% url 'watch' slug=random_movie%}"
       </div>
   </footer>
 {% endblock %}
-
-</body>
-
-</html>
