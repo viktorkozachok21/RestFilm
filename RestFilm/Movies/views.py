@@ -1,17 +1,12 @@
 # coding: utf-8
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 import random
 from .models import Film
 from .models import Comment
 from .models import News
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.utils import timezone
 from django.http import HttpResponseRedirect
-from django.views.generic.edit import FormView
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
 from django.contrib import auth
-from django.core.mail import send_mail
 from .forms import CommentForm
 from django.utils.translation import ugettext as _
 
@@ -32,7 +27,7 @@ def home(request):
     except EmptyPage:
         movie_list = paginator.page(paginator.num_pages)
 
-    return render(request, 'Movies/home.html', {'news_list': news_list, 'user': user, 'movie_list': movie_list, 'random_movie': random_movie})
+    return render(request, 'Movies/home.html', {'movie_list': movie_list, 'news_list': news_list, 'user': user, 'random_movie': random_movie})
 
 def watch(request, slug):
     movie_list = Film.objects.all()
@@ -94,4 +89,4 @@ def filter(request, slug):
     except EmptyPage:
         movies = paginator.page(paginator.num_pages)
 
-    return render(request, 'Movies/filter.html', {'news_list': news_list, 'random_movie': random_movie, 'user': user, 'movies': movies})
+    return render(request, 'Movies/filter.html', {'news_list': news_list, 'user': user, 'movies': movies, 'random_movie': random_movie})

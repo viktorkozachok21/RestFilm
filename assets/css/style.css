@@ -107,6 +107,12 @@ main .navbar-brand{
 
 @media screen and (max-width: 768px){
   body{
-    margin-top: 17%;
+    margin-top: 20%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  body{
+    margin-top: 30%;
   }
 }
