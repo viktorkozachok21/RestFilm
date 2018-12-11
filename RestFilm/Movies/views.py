@@ -8,17 +8,21 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
 from django.contrib import auth
-from django.core.mail import send_mail
 from .forms import CommentForm
+from django.contrib.auth import authenticate, logout
+from django.contrib.auth import login as auth_login
 from django.utils.translation import ugettext as _
+from django.contrib import messages
+from .forms import RegistrationForm
+from .forms import ContactForm
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
 
 
 # Create your views here.
 def home(request):
-    movie_list = Film.objects.all()
+    movie_list = Film.objects.order_by("-created_on")
     news_list = News.objects.all()
     random_movie = random.choice(movie_list)
     user = auth.get_user(request)
@@ -61,7 +65,7 @@ def watch(request, slug):
 
 def filter(request, slug):
     movies = []
-    movie_list = Film.objects.all()
+    movie_list = Film.objects.order_by("-created_on")
     news_list = News.objects.all()
 
     if slug == _("Novelty"):
@@ -94,4 +98,66 @@ def filter(request, slug):
     except EmptyPage:
         movies = paginator.page(paginator.num_pages)
 
-    return render(request, 'Movies/filter.html', {'news_list': news_list, 'random_movie': random_movie, 'user': user, 'movies': movies})
+    return render(request, 'Movies/filter.html', {'slug_meta': slug, 'news_list': news_list, 'random_movie': random_movie, 'user': user, 'movies': movies})
+
+def signin(request):
+    movie_list = Film.objects.all()
+    random_movie = random.choice(movie_list)
+
+    if request.method == 'POST':
+        l_username = request.POST['username']
+        l_password = request.POST['password']
+        user = authenticate(request, username=l_username, password=l_password)
+
+        if user is not None:
+            if user.is_active:
+                auth_login(request, user)
+                return HttpResponseRedirect('/')
+        else:
+            messages.warning(request, 'Sorry, login or password was invalid. Please try again.')
+            return HttpResponseRedirect(request.path_info)
+
+    return render(request, 'Movies/signin.html', {'random_movie': random_movie})
+
+def signup(request):
+    movie_list = Film.objects.all()
+    random_movie = random.choice(movie_list)
+
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            l_username = request.POST['username']
+            l_password = request.POST['password1']
+            user = authenticate(request, username=l_username, password=l_password)
+
+            if user is not None:
+                if user.is_active:
+                    auth_login(request, user)
+                    return HttpResponseRedirect('/')
+    else:
+        form = RegistrationForm()
+
+    return render(request, 'Movies/signup.html', {'form': form, 'random_movie': random_movie})
+
+def userlogout(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
+def contact(request):
+    movie_list = Film.objects.all()
+    random_movie = random.choice(movie_list)
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            sender = form.cleaned_data['email']
+
+            send_mail(subject, message, sender, ['viktorkozachok21@gmail.com'])
+            return HttpResponseRedirect('/')
+    else:
+        form = ContactForm()
+
+    return render(request, 'Movies/send.html', {'form': form, 'random_movie': random_movie})

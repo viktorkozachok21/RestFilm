@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% load i18n %}
+
+
+
+{% block meta %}
+="{% trans "Write to us" %}"
+{% endblock %}
+
+{% block title %}
+{% trans "Write to us" %}
+{% endblock %}
+
+{% block random_movie %}
+href="{% url 'watch' slug=random_movie%}"
+{% endblock %}
+
+{% block content %}
+<div class="container card font-weight-bold mb-3 text-center text-dark">
+    <div class="card-header m-3"><h2>{% trans "Write to us" %}</h2></div>
+    <form class="signup p-3" method="POST">{% csrf_token %}
+    {% for field in form %}
+      <div class="form-group d-flex justify-content-center">
+      <div class="md-form mb-1">
+        <div class="mb-5">{{ field.label_tag }}</div>
+        {{ field }}
+      </div>
+      </div>
+    {% endfor %}
+    <div class="card-footer form-group d-flex justify-content-center m-1">
+      <button class="btn w-50 btn-block white-text unique-color-dark" type="submit">{% trans "Send" %}</button>
+    </div>
+</form>
+</div>
+{% endblock %}
