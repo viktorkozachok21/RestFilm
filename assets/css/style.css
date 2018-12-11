@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Roboto&subset=cyrillic');
 *{
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body{
   text-align: center;
   color: #7a8777;
   font-family: 'Roboto', sans-serif;
-  font-family: 'Suez One', serif;
+  font-family: 'Comfortaa', cursive;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -107,6 +107,6 @@ main .navbar-brand{
 
 @media screen and (max-width: 768px){
   body{
-    margin-top: 17%;
+    margin-top: 20%;
   }
 }

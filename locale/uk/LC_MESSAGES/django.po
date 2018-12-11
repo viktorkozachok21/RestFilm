@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 16:08+0200\n"
+"POT-Creation-Date: 2018-12-11 21:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,260 +21,294 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: RestFilm/Movies/templates/Movies/filter.html:17
-#: RestFilm/Movies/templates/Movies/home.html:17
+#: RestFilm/Movies/forms.py:26
+msgid ""
+"This email address is already in use. Please supply a different email "
+"address."
+msgstr ""
+"Ця адреса електронної пошти вже використовується. Будь ласка, введіть іншу "
+"електронну адресу"
+
+#: RestFilm/Movies/templates/Movies/filter.html:21
+#: RestFilm/Movies/templates/Movies/home.html:21
 msgid "Categories:"
 msgstr "Категорії"
-
-#: RestFilm/Movies/templates/Movies/filter.html:22
-#: RestFilm/Movies/templates/Movies/filter.html:23
-#: RestFilm/Movies/templates/Movies/home.html:22
-#: RestFilm/Movies/templates/Movies/home.html:23
-msgid "Detective"
-msgstr "Детектив"
 
 #: RestFilm/Movies/templates/Movies/filter.html:26
 #: RestFilm/Movies/templates/Movies/filter.html:27
 #: RestFilm/Movies/templates/Movies/home.html:26
 #: RestFilm/Movies/templates/Movies/home.html:27
-msgid "Action"
-msgstr "Бойовик"
+msgid "Detective"
+msgstr "Детектив"
 
 #: RestFilm/Movies/templates/Movies/filter.html:30
 #: RestFilm/Movies/templates/Movies/filter.html:31
 #: RestFilm/Movies/templates/Movies/home.html:30
 #: RestFilm/Movies/templates/Movies/home.html:31
-msgid "Comedy"
-msgstr "Комедія"
+msgid "Action"
+msgstr "Бойовик"
 
 #: RestFilm/Movies/templates/Movies/filter.html:34
 #: RestFilm/Movies/templates/Movies/filter.html:35
 #: RestFilm/Movies/templates/Movies/home.html:34
 #: RestFilm/Movies/templates/Movies/home.html:35
-msgid "Drama"
-msgstr "Драма"
+msgid "Comedy"
+msgstr "Комедія"
 
 #: RestFilm/Movies/templates/Movies/filter.html:38
 #: RestFilm/Movies/templates/Movies/filter.html:39
 #: RestFilm/Movies/templates/Movies/home.html:38
 #: RestFilm/Movies/templates/Movies/home.html:39
-msgid "Adventures"
-msgstr "Пригоди"
+msgid "Drama"
+msgstr "Драма"
 
 #: RestFilm/Movies/templates/Movies/filter.html:42
 #: RestFilm/Movies/templates/Movies/filter.html:43
 #: RestFilm/Movies/templates/Movies/home.html:42
 #: RestFilm/Movies/templates/Movies/home.html:43
-msgid "Family"
-msgstr "Сімейний"
+msgid "Adventures"
+msgstr "Пригоди"
 
 #: RestFilm/Movies/templates/Movies/filter.html:46
 #: RestFilm/Movies/templates/Movies/filter.html:47
 #: RestFilm/Movies/templates/Movies/home.html:46
 #: RestFilm/Movies/templates/Movies/home.html:47
-msgid "Fantasy"
-msgstr "Фантастика"
+msgid "Family"
+msgstr "Сімейний"
 
 #: RestFilm/Movies/templates/Movies/filter.html:50
 #: RestFilm/Movies/templates/Movies/filter.html:51
 #: RestFilm/Movies/templates/Movies/home.html:50
 #: RestFilm/Movies/templates/Movies/home.html:51
-msgid "Musical"
-msgstr "Мюзикл"
+msgid "Fantasy"
+msgstr "Фантастика"
 
 #: RestFilm/Movies/templates/Movies/filter.html:54
 #: RestFilm/Movies/templates/Movies/filter.html:55
 #: RestFilm/Movies/templates/Movies/home.html:54
 #: RestFilm/Movies/templates/Movies/home.html:55
-msgid "Biography"
-msgstr "Біографія"
+msgid "Musical"
+msgstr "Мюзикл"
 
 #: RestFilm/Movies/templates/Movies/filter.html:58
 #: RestFilm/Movies/templates/Movies/filter.html:59
 #: RestFilm/Movies/templates/Movies/home.html:58
 #: RestFilm/Movies/templates/Movies/home.html:59
-msgid "Hystory"
-msgstr "Історія"
+msgid "Biography"
+msgstr "Біографія"
 
 #: RestFilm/Movies/templates/Movies/filter.html:62
 #: RestFilm/Movies/templates/Movies/filter.html:63
 #: RestFilm/Movies/templates/Movies/home.html:62
 #: RestFilm/Movies/templates/Movies/home.html:63
-msgid "Documentary"
-msgstr "Документальний"
+msgid "Hystory"
+msgstr "Історія"
 
 #: RestFilm/Movies/templates/Movies/filter.html:66
 #: RestFilm/Movies/templates/Movies/filter.html:67
 #: RestFilm/Movies/templates/Movies/home.html:66
 #: RestFilm/Movies/templates/Movies/home.html:67
-msgid "Thriller"
-msgstr "Трилер"
+msgid "Documentary"
+msgstr "Документальний"
 
 #: RestFilm/Movies/templates/Movies/filter.html:70
 #: RestFilm/Movies/templates/Movies/filter.html:71
 #: RestFilm/Movies/templates/Movies/home.html:70
 #: RestFilm/Movies/templates/Movies/home.html:71
-msgid "Sport"
-msgstr "Спорт"
+msgid "Thriller"
+msgstr "Трилер"
 
 #: RestFilm/Movies/templates/Movies/filter.html:74
 #: RestFilm/Movies/templates/Movies/filter.html:75
 #: RestFilm/Movies/templates/Movies/home.html:74
 #: RestFilm/Movies/templates/Movies/home.html:75
-msgid "Horror"
-msgstr "Жахи"
+msgid "Sport"
+msgstr "Спорт"
 
 #: RestFilm/Movies/templates/Movies/filter.html:78
 #: RestFilm/Movies/templates/Movies/filter.html:79
 #: RestFilm/Movies/templates/Movies/home.html:78
 #: RestFilm/Movies/templates/Movies/home.html:79
+msgid "Horror"
+msgstr "Жахи"
+
+#: RestFilm/Movies/templates/Movies/filter.html:82
+#: RestFilm/Movies/templates/Movies/filter.html:83
+#: RestFilm/Movies/templates/Movies/home.html:82
+#: RestFilm/Movies/templates/Movies/home.html:83
 msgid "Melodrama"
 msgstr "Мелодрама"
 
-#: RestFilm/Movies/templates/Movies/watch.html:29
-msgid "Online"
-msgstr "Онлайн"
-
-#: RestFilm/Movies/templates/Movies/watch.html:33
-msgid "Trailer"
-msgstr "Трейлер"
-
-#: RestFilm/Movies/templates/Movies/watch.html:51
-msgid "Comment"
-msgstr "Коментар"
-
-#: RestFilm/Movies/templates/Movies/watch.html:59
-msgid "Add comment"
-msgstr "Додати коментар"
-
-#: RestFilm/Movies/templates/Movies/watch.html:62
-msgid "Cancel"
-msgstr "Відміна"
-
-#: RestFilm/Movies/templates/Movies/watch.html:63
-msgid "Reply"
-msgstr "Підтвердити"
-
-#: RestFilm/Movies/templates/Movies/watch.html:80
-#: RestFilm/templates/index.html:229
-msgid "Avatar"
-msgstr "Аватар"
-
-#: RestFilm/Movies/views.py:74 RestFilm/templates/index.html:38
-#: RestFilm/templates/index.html:39
-msgid "Novelty"
-msgstr "Новинки"
-
-#: RestFilm/Movies/views.py:78 RestFilm/templates/index.html:42
-#: RestFilm/templates/index.html:43
-msgid "Popular"
-msgstr "Популярне"
-
-#: RestFilm/RestFilm/settings.py:161
-msgid "Укр"
-msgstr ""
-
-#: RestFilm/RestFilm/settings.py:162
-msgid "Анг"
-msgstr ""
-
-#: RestFilm/templates/index.html:16 RestFilm/templates/index.html:31
-msgid "movies in HD quality online"
-msgstr "фільми в HD якості онлайн"
-
-#: RestFilm/templates/index.html:17
+#: RestFilm/Movies/templates/Movies/home.html:7
 msgid ""
 "фільми, серіали, мультфільми, онлайн, дивитися, українсько, безкоштовно, HD "
 "720, HD 1080"
-msgstr "фільми, серіали, мультфільми, онлайн, дивитися, українсько, безкоштовно, HD "
+msgstr ""
+"фільми, серіали, мультфільми, онлайн, дивитися, українсько, безкоштовно, HD "
 "720, HD 1080"
 
-#: RestFilm/templates/index.html:29
-msgid "Movies in HD quality online"
-msgstr "Фільми в HD якості онлайн"
-
-#: RestFilm/templates/index.html:39
-msgid "New films"
-msgstr "Нові фільми"
-
-#: RestFilm/templates/index.html:43
-msgid "Popular films"
-msgstr "Популярні фільми"
-
-#: RestFilm/templates/index.html:46
-msgid "Random film"
-msgstr "Випадковий фільм"
-
-#: RestFilm/templates/index.html:46
-msgid "Random"
-msgstr "Випадковий"
-
-#: RestFilm/templates/index.html:50
-msgid "Years"
-msgstr "Роки"
-
-#: RestFilm/templates/index.html:100
-msgid "Search"
-msgstr "Пошук"
-
-#: RestFilm/templates/index.html:105
-msgid "Account"
-msgstr "Профіль"
-
-#: RestFilm/templates/index.html:115
-msgid "Language for the site"
-msgstr "Мова сайту"
-
-#: RestFilm/templates/index.html:137
-msgid "Get connected with us on social networks!"
-msgstr "Приєднуйся до нас в соц. мережах!"
-
-#: RestFilm/templates/index.html:173
-msgid "Rivne"
-msgstr "Рівне"
-
-#: RestFilm/templates/index.html:187
+#: RestFilm/Movies/templates/Movies/send.html:7
+#: RestFilm/Movies/templates/Movies/send.html:11
+#: RestFilm/Movies/templates/Movies/send.html:20
 msgid "Write to us"
 msgstr "Напиши нам"
 
-#: RestFilm/templates/index.html:198 RestFilm/templates/index.html:293
-msgid "Your name"
-msgstr "Ім'я"
-
-#: RestFilm/templates/index.html:203 RestFilm/templates/index.html:253
-#: RestFilm/templates/index.html:298
-msgid "Your email"
-msgstr "email"
-
-#: RestFilm/templates/index.html:208
-msgid "Subject"
-msgstr "Тема"
-
-#: RestFilm/templates/index.html:213
-msgid "Your message"
-msgstr "Повідомлення"
-
-#: RestFilm/templates/index.html:217
+#: RestFilm/Movies/templates/Movies/send.html:31
 msgid "Send"
 msgstr "Відправити"
 
-#: RestFilm/templates/index.html:243 RestFilm/templates/index.html:260
+#: RestFilm/Movies/templates/Movies/signin.html:7
+#: RestFilm/Movies/templates/Movies/signin.html:11
+#: RestFilm/Movies/templates/Movies/signin.html:21
+#: RestFilm/Movies/templates/Movies/signin.html:38
+#: RestFilm/Movies/templates/Movies/signup.html:36
 msgid "Log in"
 msgstr "Увійти"
 
-#: RestFilm/templates/index.html:257 RestFilm/templates/index.html:303
-msgid "Your password"
+#: RestFilm/Movies/templates/Movies/signin.html:31
+msgid "username"
+msgstr "Ім'я"
+
+#: RestFilm/Movies/templates/Movies/signin.html:35
+msgid "password"
 msgstr "Пароль"
 
-#: RestFilm/templates/index.html:269
-msgid "Not a member?"
+#: RestFilm/Movies/templates/Movies/signin.html:40
+msgid "Not a member? "
 msgstr "Ще не зареєстровані?"
 
-#: RestFilm/templates/index.html:270 RestFilm/templates/index.html:282
-#: RestFilm/templates/index.html:308
+#: RestFilm/Movies/templates/Movies/signin.html:40
 msgid "Sign in"
 msgstr "Реєстрація"
 
-#: RestFilm/templates/index.html:315 RestFilm/templates/index.html:316
+#: RestFilm/Movies/templates/Movies/signin.html:44
+msgid "Log in with Facebook"
+msgstr "Увійти через Facebook"
+
+#: RestFilm/Movies/templates/Movies/signin.html:49
+msgid "Log in with Google"
+msgstr "Увійти через Google"
+
+#: RestFilm/Movies/templates/Movies/signup.html:7
+#: RestFilm/Movies/templates/Movies/signup.html:11
+#: RestFilm/Movies/templates/Movies/signup.html:20
+msgid "Registration"
+msgstr "Реєстрація"
+
+#: RestFilm/Movies/templates/Movies/signup.html:34
+msgid "Register"
+msgstr "Підтвердити"
+
+#: RestFilm/Movies/templates/Movies/watch.html:33
+msgid "Online"
+msgstr "Онлайн"
+
+#: RestFilm/Movies/templates/Movies/watch.html:37
+msgid "Trailer"
+msgstr "Трейлер"
+
+#: RestFilm/Movies/templates/Movies/watch.html:56
+msgid "Comment"
+msgstr "Коментар"
+
+#: RestFilm/Movies/templates/Movies/watch.html:64
+msgid "Add comment"
+msgstr "Додати коментар"
+
+#: RestFilm/Movies/templates/Movies/watch.html:67
+msgid "Cancel"
+msgstr "Відміна"
+
+#: RestFilm/Movies/templates/Movies/watch.html:68
+msgid "Reply"
+msgstr "Підтвердити"
+
+#: RestFilm/Movies/templates/Movies/watch.html:85
+#: RestFilm/templates/index.html:192
+msgid "Avatar"
+msgstr "Аватар"
+
+#: RestFilm/Movies/views.py:71 RestFilm/templates/index.html:37
+#: RestFilm/templates/index.html:38
+msgid "Novelty"
+msgstr "Новинки"
+
+#: RestFilm/Movies/views.py:75 RestFilm/templates/index.html:41
+#: RestFilm/templates/index.html:42
+msgid "Popular"
+msgstr "Популярне"
+
+#: RestFilm/RestFilm/settings.py:160
+msgid "Укр"
+msgstr "Укр"
+
+#: RestFilm/RestFilm/settings.py:161
+msgid "Анг"
+msgstr "Анг"
+
+#: RestFilm/templates/index.html:16 RestFilm/templates/index.html:30
+msgid "movies in HD quality online"
+msgstr "фільми в HD якості онлайн"
+
+#: RestFilm/templates/index.html:28
+msgid "Movies in HD quality online"
+msgstr "Фільми в HD якості онлайн"
+
+#: RestFilm/templates/index.html:38
+msgid "New films"
+msgstr "Нові фільми"
+
+#: RestFilm/templates/index.html:42
+msgid "Popular films"
+msgstr "Популярні фільми"
+
+#: RestFilm/templates/index.html:45
+msgid "Random film"
+msgstr "Випадковий фільм"
+
+#: RestFilm/templates/index.html:45
+msgid "Random"
+msgstr "Випадковий"
+
+#: RestFilm/templates/index.html:49
+msgid "Years"
+msgstr "Роки"
+
+#: RestFilm/templates/index.html:99
+msgid "Search"
+msgstr "Пошук"
+
+#: RestFilm/templates/index.html:105 RestFilm/templates/index.html:109
+msgid "Account"
+msgstr "Профіль"
+
+#: RestFilm/templates/index.html:120
+msgid "Language for the site"
+msgstr "Мова сайту"
+
+#: RestFilm/templates/index.html:142
+msgid "Get connected with us on social networks!"
+msgstr "Приєднуйся до нас в соц. мережах!"
+
+#: RestFilm/templates/index.html:178
+msgid "Rivne"
+msgstr "Рівне"
+
+#: RestFilm/templates/index.html:198
+#, fuzzy
+#| msgid "Log in"
+msgid "Log out"
+msgstr "Увійти"
+
+#: RestFilm/templates/index.html:205 RestFilm/templates/index.html:206
 msgid "Go top"
 msgstr "Вгору"
+
+#~ msgid "Your email"
+#~ msgstr "email"
+
+#~ msgid "Subject"
+#~ msgstr "Тема"
+
+#~ msgid "Your message"
+#~ msgstr "Повідомлення"
