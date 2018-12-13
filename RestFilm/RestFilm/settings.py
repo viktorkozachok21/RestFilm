@@ -220,7 +220,8 @@ AUTHENTICATION_BACKENDS = (
 ROBOTS_USE_SITEMAP = False
 
 ROBOTS_SITEMAP_URLS = [
-    'http://localhost:8000/sitemap.xml',
+    'http://viktorKozachok.pythonanywhere.com/sitemap.xml',
+    'https://viktorKozachok.pythonanywhere.com/sitemap.xml',
 ]
 
 ROBOTS_SITEMAP_VIEW_NAME = 'cached-sitemap'
