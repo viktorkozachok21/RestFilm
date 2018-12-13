@@ -4,7 +4,6 @@ from .models import Film
 from .models import Comment
 from .models import News
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView
 from django.contrib import auth
@@ -38,7 +37,7 @@ def home(request):
     except EmptyPage:
         movie_list = paginator.page(paginator.num_pages)
 
-    return render(request, 'Movies/home.html', {'news_list': news_list, 'user': user, 'movie_list': movie_list, 'random_movie': random_movie})
+    return render(request, 'Movies/home.html', {'movie_list': movie_list, 'news_list': news_list, 'user': user, 'random_movie': random_movie})
 
 def watch(request, slug):
     movie_list = Film.objects.all()

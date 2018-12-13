@@ -127,5 +127,14 @@ main .nav-link:hover{
 @media screen and (max-width: 600px){
   body{
     margin-top: 20%;
+<<<<<<< HEAD
+  }
+}
+
+@media screen and (max-width: 500px){
+  body{
+    margin-top: 30%;
+=======
+>>>>>>> c86d86f8adb014d071e9e898a98d4d0d85f356f5
   }
 }
