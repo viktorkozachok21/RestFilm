@@ -13,6 +13,7 @@ body{
   color: #263238 !important;
   font-family: 'Roboto', sans-serif;
   font-family: 'Comfortaa', cursive;
+  background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_1280x720.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -83,7 +84,7 @@ main .nav-link:hover{
   margin: 1% 0;
 }
 .card-header{
-  background: #fafafa;
+  background: #546e7a;
 }
 #go-top {
   position: fixed;
@@ -95,11 +96,36 @@ main .nav-link:hover{
   height: 10%;
   width: 10%;
 }
+.img-fruid{
+  height: 100%;
+  width: 100%;
+}
+.dropdown-item{
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+.date{
+  font-size: 0.7em;
+}
+.md-textarea{
+  width: 100%;
+}
+.years{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+}
+.dropdown-item{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
 
 
 @media screen and (min-width: 1500px){
   body{
     margin-top: 8%;
+    background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_1920x1200.jpg');
   }
   .dropdown-menu{
     width: 45vh;
@@ -109,6 +135,7 @@ main .nav-link:hover{
 @media screen and (max-width: 990px){
   body{
     margin-top: 13%;
+    background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_1024x600.jpg');
   }
   .dropdown-menu{
     width: 95vw;
@@ -118,23 +145,26 @@ main .nav-link:hover{
 @media screen and (max-width: 768px){
   body{
     margin-top: 16%;
+    background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_800x600.jpg');
   }
   .dropdown-menu{
     width: 94vw;
+  }
+  .dropdown-item{
+    width: 85%;
   }
 }
 
 @media screen and (max-width: 600px){
   body{
     margin-top: 20%;
-<<<<<<< HEAD
+    background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_800x600.jpg');
   }
 }
 
 @media screen and (max-width: 500px){
   body{
     margin-top: 30%;
-=======
->>>>>>> c86d86f8adb014d071e9e898a98d4d0d85f356f5
+    background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_480x800.jpg');
   }
 }

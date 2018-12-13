@@ -30,7 +30,7 @@ href="{% url 'watch' slug=random_movie %}"
     </div>
     <div class="card-footer content p-3">{{ movie.content|safe }}</div>
     <div class="card-footer content">
-      <ul class="nav nav-tabs md-tabs tabs-2 darken-3 pt-3 mx-5" style="background: #263238;" role="tablist">
+      <ul class="nav nav-tabs md-tabs tabs-2 darken-3 pt-3 mx-1" style="background: #263238;" role="tablist">
         <li class="nav-item mx-1">
           <a class="nav-link active black-text" data-toggle="tab" href="#Movie" role="tab"><i class="fa fa-caret-square-o-right mr-1"></i>
             {% trans "Online" %}</a>
@@ -44,10 +44,10 @@ href="{% url 'watch' slug=random_movie %}"
       <div class="embed-responsive embed-responsive-16by9">
         <div class="tab-content">
           <div class="tab-pane fade in show active" id="Movie" role="tabpanel">
-            <iframe class="embed-responsive-item px-5" src="{{ movie.film_url }}" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item px-1" src="{{ movie.film_url }}" allowfullscreen></iframe>
           </div>
           <div class="tab-pane fade" id="Trailer" role="tabpanel">
-            <iframe class="embed-responsive-item px-5" src="{{ movie.trailer_url }}" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item px-1" src="{{ movie.trailer_url }}" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -73,14 +73,13 @@ href="{% url 'watch' slug=random_movie %}"
               {% csrf_token %}
               <div class="md-form mt-1">
                 <textarea type="text" name="content" id="commentForm-message" class="form-control md-textarea" rows="1"></textarea>
-                <i class="fa fa-pencil prefix"></i>
                 <label for="commentForm-message">{% trans "Add comment" %}</label>
               </div>
               <script src='https://www.google.com/recaptcha/api.js'></script>
               <div class="md-form d-flex justify-content-center g-recaptcha" data-sitekey="6Lfc_4AUAAAAACyPo0ijLC83f9NeZPhC9I0waa55"></div>
-              <div class="d-flex justify-content-end">
-                <button type="reset" class="btn btn-primary waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1">{% trans "Cancel" %}</button>
-                <button type="submit" class="btn btn-primary waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1" value="Submit">{% trans "Reply" %}</button>
+              <div class="d-flex justify-content-center">
+                <button type="reset" class="btn btn-dark w-50 p-2 mx-3 waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1">{% trans "Cancel" %}</button>
+                <button type="submit" class="btn btn-dark w-50 p-2 mx-3 waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1" value="Submit">{% trans "Reply" %}</button>
               </div>
             </form>
           </div>
@@ -97,12 +96,12 @@ href="{% url 'watch' slug=random_movie %}"
     {% for post in comment_list %}
     <div class="card p-3 mb-1">
       <div class="media">
-        <img class="d-flex rounded-circle avatar w-10 h-10 z-depth-1-half mr-3" src="{% static 'img/images/user-man.png' %}" alt="{% trans " Avatar" %}">
+        <img class="d-flex rounded-circle avatar z-depth-1-half mr-5" src="{% static 'img/images/user-man.png' %}" alt="{% trans " Avatar" %}">
         <div class="media-body">
           <div class="excerpt">
-            <div class="brief float-left">
+            <div class="brief float-left mr-3">
               <a class="name">
-                <h5 class="font-weight-bold blue-text mr-3">{{ post.author }}</h5>
+                <p class="font-weight-bold blue-text">{{ post.author }}<p>
               </a>
               <div class="date">{{ post.created_on.date }}</div>
             </div>
