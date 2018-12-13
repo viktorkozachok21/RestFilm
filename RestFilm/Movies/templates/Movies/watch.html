@@ -13,90 +13,105 @@
 {% endblock %}
 
 {% block random_movie %}
-href="{% url 'watch' slug=random_movie%}"
+href="{% url 'watch' slug=random_movie %}"
 {% endblock %}
 
 {% block content %}
-    <article class="text-center text-dark mb-4">
-      <div class="card news-card">
-        <div class="card-header right-side-meta mb-1"><h2>{{ movie.film_name }}</h2></div>
-        <div class="card-body row">
-          <div class="col-md avatar">
-            <img src="{{ movie.photo.url }}" class="avatar-img z-depth-1-half mr-3">
-            </div>
-            <div class="col-md content p-3">{{ movie.description|safe }}</div>
-        </div>
-        <div class="card-footer content p-3">{{ movie.content|safe }}</div>
-          <ul class="nav nav-tabs md-tabs tabs-2 darken-3 pt-1" style="background: #7a8777;" role="tablist">
-            <li class="nav-item mx-1">
-              <a class="nav-link active black-text" data-toggle="tab" href="#Movie" role="tab"><i class="fa fa-caret-square-o-right mr-1"></i>
-                {% trans "Online" %}</a>
-            </li>
-            <li class="nav-item mx-1">
-              <a class="nav-link black-text" data-toggle="tab" href="#Trailer" role="tab"><i class="fa fa-file-video-o mr-1"></i>
-                {% trans "Trailer" %}</a>
-            </li>
-          </ul>
+<article class="mb-4">
+  <div class="card news-card">
+    <div class="card-header special-color right-side-meta mb-1">
+      <h2 class="teal-text">{{ movie.film_name }}</h2>
+    </div>
+    <div class="card-body row">
+      <div class="col-md-3 avatar">
+        <img src="{{ movie.photo.url }}" class="avatar-img w-70 h-80 z-depth-1-half mr-3">
+      </div>
+      <div class="col-md content p-3">{{ movie.description|safe }}</div>
+    </div>
+    <div class="card-footer content p-3">{{ movie.content|safe }}</div>
+    <div class="card-footer content">
+      <ul class="nav nav-tabs md-tabs tabs-2 darken-3 pt-3 mx-5" style="background: #263238;" role="tablist">
+        <li class="nav-item mx-1">
+          <a class="nav-link active black-text" data-toggle="tab" href="#Movie" role="tab"><i class="fa fa-caret-square-o-right mr-1"></i>
+            {% trans "Online" %}</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link black-text" data-toggle="tab" href="#Trailer" role="tab"><i class="fa fa-file-video-o mr-1"></i>
+            {% trans "Trailer" %}</a>
+        </li>
+      </ul>
 
-        <div class="embed-responsive embed-responsive-1by1">
+      <div class="embed-responsive embed-responsive-16by9">
         <div class="tab-content">
           <div class="tab-pane fade in show active" id="Movie" role="tabpanel">
-            <iframe class="embed-responsive-item p-1" src="{{ movie.film_url }}" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item px-5" src="{{ movie.film_url }}" allowfullscreen></iframe>
           </div>
           <div class="tab-pane fade" id="Trailer" role="tabpanel">
-            <iframe class="embed-responsive-item p-1" src="{{ movie.trailer_url }}" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item px-5" src="{{ movie.trailer_url }}" allowfullscreen></iframe>
           </div>
         </div>
-        </div>
-
-        {% if user.is_authenticated %}
-        <div class="card-body">
-          <hr>
-          <div class="feed-footer">
-            <a class="comment text-uppercase font-weight-bold white-text unique-color-dark p-2" data-toggle="collapse" href="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1">{% trans "Comment" %}</a>
-            <div class="collapse" id="collapseExample-1">
-              <div class="card card-body mt-1">
-                <form method="POST">
-                  {% csrf_token %}
-                <div class="md-form mt-1 mb-1">
-                  <textarea type="text" name="content" id="commentForm-message" class="form-control md-textarea" rows="1"></textarea>
-                  <i class="fa fa-pencil prefix"></i>
-                  <label for="commentForm-message">{% trans "Add comment" %}</label>
-                </div>
-                <div class="d-flex justify-content-end">
-                  <button type="cancel" class="btn btn-primary waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1">{% trans "Cancel" %}</button>
-                  <button type="submit" class="save btn btn-primary waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1" value="Save">{% trans "Reply" %}</button>
-                </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% else %}
-        <div class="disabled">
-          </div>
-        {% endif %}
       </div>
+    </div>
 
-      <footer class="my-5">
-        {% for post in comment %}
-        <div class="card p-3 mb-1">
-          <div class="media">
-            <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{% static 'img/images/user-man.png' %}" alt="{% trans "Avatar" %}">
-            <div class="media-body">
-              <div class="excerpt">
-                <div class="brief float-left">
-                  <a class="name">
-                    <h5 class="font-weight-bold blue-text mr-3">{{ post.author }}</h5>
-                  </a>
-                  <div class="date">{{ post.created_on }}</div>
-                </div>
-                <div class="added-text p-3"><strong>{{ post.content }}</strong></div>
+    {% if user.is_authenticated %}
+    <div class="card-body">
+      <hr>
+      <div class="feed-footer">
+        <div class="m-3">
+          {% if messages %}
+          <ul class="navbar-nav text-danger messages">{% for message in messages %}
+            <li class="nav-item" {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+              <h1>{{ message }}</h1>
+            </li>
+            {% endfor %}</ul>
+          {% endif %}
+        </div>
+        <a class="comment text-uppercase font-weight-bold white-text unique-color-dark p-2" data-toggle="collapse" href="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1">{% trans "Comment" %}</a>
+        <div class="collapse" id="collapseExample-1">
+          <div class="card card-body mt-1">
+            <form method="POST">
+              {% csrf_token %}
+              <div class="md-form mt-1">
+                <textarea type="text" name="content" id="commentForm-message" class="form-control md-textarea" rows="1"></textarea>
+                <i class="fa fa-pencil prefix"></i>
+                <label for="commentForm-message">{% trans "Add comment" %}</label>
               </div>
-            </div>
+              <script src='https://www.google.com/recaptcha/api.js'></script>
+              <div class="md-form d-flex justify-content-center g-recaptcha" data-sitekey="6Lfc_4AUAAAAACyPo0ijLC83f9NeZPhC9I0waa55"></div>
+              <div class="d-flex justify-content-end">
+                <button type="reset" class="btn btn-primary waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1">{% trans "Cancel" %}</button>
+                <button type="submit" class="btn btn-primary waves-effect" data-toggle="collapse" data-target="#collapseExample-1" aria-expanded="false" aria-controls="collapseExample-1" value="Submit">{% trans "Reply" %}</button>
+              </div>
+            </form>
           </div>
         </div>
-        {% endfor %}
-      </footer>
-    </article>
+      </div>
+    </div>
+    {% else %}
+    <div class="disabled">
+    </div>
+    {% endif %}
+  </div>
+
+  <footer class="my-3">
+    {% for post in comment_list %}
+    <div class="card p-3 mb-1">
+      <div class="media">
+        <img class="d-flex rounded-circle avatar w-10 h-10 z-depth-1-half mr-3" src="{% static 'img/images/user-man.png' %}" alt="{% trans " Avatar" %}">
+        <div class="media-body">
+          <div class="excerpt">
+            <div class="brief float-left">
+              <a class="name">
+                <h5 class="font-weight-bold blue-text mr-3">{{ post.author }}</h5>
+              </a>
+              <div class="date">{{ post.created_on.date }}</div>
+            </div>
+            <div class="added-text p-3"><strong>{{ post.content }}</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </footer>
+</article>
 {% endblock %}

@@ -16,7 +16,7 @@ class RegistrationForm(UserCreationForm):
 
         class Meta:
             model = User
-            fields = ('username', 'email', 'password1', 'password2')
+            fields = ('username', 'email', 'password1', 'password2',)
 
         def clean_email(self):
             email = self.cleaned_data.get('email')
@@ -34,6 +34,6 @@ class RegistrationForm(UserCreationForm):
             return user
 
 class ContactForm(forms.Form):
-    email = forms.EmailField()
-    subject = forms.CharField(max_length=100)
-    message = forms.CharField(widget=forms.Textarea)
+    email = forms.EmailField(label=_(u"Email"))
+    subject = forms.CharField(max_length=50,label=_(u"Subject"))
+    message = forms.CharField(widget=forms.Textarea(attrs={'rows': '3', 'class': 'md-textarea'}),label=_(u"Message"))

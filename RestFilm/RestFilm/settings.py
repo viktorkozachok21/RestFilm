@@ -35,11 +35,13 @@ INSTALLED_APPS = [
     'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'robots',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -151,9 +153,6 @@ TINYMCE_DEFAULT_CONFIG = {
 'statusbar': True,
 }
 
-
-SITE_ID = 1
-
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
@@ -214,3 +213,17 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
+ROBOTS_USE_SITEMAP = False
+
+ROBOTS_SITEMAP_URLS = [
+    'http://localhost:8000/sitemap.xml',
+]
+
+ROBOTS_SITEMAP_VIEW_NAME = 'cached-sitemap'
+
+ROBOTS_USE_HOST = False
+
+ROBOTS_USE_SCHEME_IN_HOST = True
+
+SITE_ID = 1
