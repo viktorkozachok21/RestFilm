@@ -22,7 +22,7 @@ href="{% url 'watch' slug=random_movie %}"
     <div class="col-lg-2 col-md-6 mb-3 d-flex justify-content-center">
       <div class="view p-1 overlay rounded z-depth-2">
         <a href="{% url 'watch' slug=film.title%}">
-          <img src="{{ film.photo.url }}" class="img-fluid h-100 w-100" alt="{{ film.film_name }}">
+          <img src="{{ film.photo.url }}" class="img-fluid" alt="{{ film.film_name }}">
           <div class="mask flex-center rgba-black-strong">
             <p class="white-text">{{ film.film_name }}</p>
           </div>
@@ -77,9 +77,7 @@ href="{% url 'watch' slug=random_movie %}"
               <div class="content">{{ news.content|safe }}</div>
             </div>
             <div class="col-md-5">
-              <div class="view z-depth-1">
-                <img src="{{ news.photo.url }}" alt="" class="img-fluid h-100 w-100">
-              </div>
+                <img src="{{ news.photo.url }}" alt="" class="img-fluid">
             </div>
           </div>
         </div>

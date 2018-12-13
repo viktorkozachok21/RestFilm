@@ -201,7 +201,7 @@ msgid " Language for the site"
 msgstr "Мова сайту"
 
 #: RestFilm/templates/index.html:141
-msgid "All categories"
+msgid "Сategories"
 msgstr "Категорії"
 
 #: RestFilm/templates/index.html:147 RestFilm/templates/index.html:148
@@ -292,11 +292,7 @@ msgstr "Рівне"
 
 #: RestFilm/templates/index.html:279
 msgid " Log out"
-msgstr "Увійти"
-
-#: RestFilm/templates/index.html:279
-msgid "Log out"
-msgstr "Увійти"
+msgstr "Вийти"
 
 #: RestFilm/templates/index.html:286
 msgid " Go top"

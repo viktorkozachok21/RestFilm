@@ -28,7 +28,7 @@ def home(request):
     random_movie = random.choice(movie_list)
     user = auth.get_user(request)
 
-    paginator = Paginator(movie_list, 6)
+    paginator = Paginator(movie_list, 30)
     page = request.GET.get('page')
     try:
         movie_list = paginator.page(page)
@@ -86,7 +86,7 @@ def filter(request, slug):
             most_popular.append(movie.top)
         popular_films = max(most_popular)
         for movie in movie_list:
-            if movie.top >= popular_films-1000:
+            if movie.top >= popular_films-popular_films/3:
                 movies.append(movie)
     elif slug == 'result' and request.method == "GET":
         search = request.GET['search']
@@ -104,7 +104,7 @@ def filter(request, slug):
     user = auth.get_user(request)
     news_list = News.objects.order_by("-created_on")
 
-    paginator = Paginator(movies, 6)
+    paginator = Paginator(movies, 30)
     page = request.GET.get('page')
     try:
         movies = paginator.page(page)
