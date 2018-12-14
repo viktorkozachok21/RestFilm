@@ -1,21 +1,17 @@
 # coding: utf-8
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Film
-from .models import Comment
-from .models import News
+from .models import *
+from .forms import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView
-from django.contrib import auth
-from .forms import CommentForm
+from django.contrib import auth, messages
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
-from django.utils.translation import ugettext as _
-from django.contrib import messages
-from .forms import RegistrationForm
-from .forms import ContactForm
+from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
+from django.conf import settings
 from datetime import date
 
 import random
@@ -44,6 +40,9 @@ def watch(request, slug):
     random_movie = random.choice(movie_list)
 
     movie = get_object_or_404(Film, title=slug)
+    if movie:
+        movie.top += 1
+        movie.save()
     user = auth.get_user(request)
     comment_list = Comment.objects.filter(post=movie)
 
@@ -86,7 +85,7 @@ def filter(request, slug):
             most_popular.append(movie.top)
         popular_films = max(most_popular)
         for movie in movie_list:
-            if movie.top >= popular_films-popular_films/3:
+            if movie.top >= popular_films-popular_films/2:
                 movies.append(movie)
     elif slug == 'result' and request.method == "GET":
         search = request.GET['search']
@@ -167,11 +166,15 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid() and request.recaptcha_is_valid:
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
+            author = form.cleaned_data['author']
             sender = form.cleaned_data['email']
+            message = form.cleaned_data['message']
 
-            send_mail(subject, message, sender, ['viktorkozachok21@gmail.com'])
+            recipients = ['viktorkozachok21@gmail.com']
+            recipients.append(sender)
+
+            send_mail(author, message, sender, recipients)
+
             return HttpResponseRedirect('/')
     else:
         form = ContactForm()

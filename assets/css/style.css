@@ -6,9 +6,9 @@
   text-decoration: none;
 }
 body{
-  margin: 1%;
-  font-size: 1.1em;
-  margin-top: 10%;
+  margin: 1em;
+  font-size: 1em;
+  margin-top: 7em;
   text-align: center;
   color: #263238 !important;
   font-family: 'Roboto', sans-serif;
@@ -36,15 +36,8 @@ aside{
 .category .nav-item:hover{
   background: rgba(96, 125, 139, 0.7);
 }
-.category .nav-link{
-  width: 100%;
-}
 header .navbar{
   background: #78909c;
-}
-header .navbar-brand{
-  font-size: 1.5em;
-  padding: 1%;
 }
 header .navbar-brand:hover{
   background: rgba(0, 0, 0, 0.3);
@@ -55,27 +48,22 @@ header .nav-item{
 header .active,.nav-item:hover{
   background: rgba(0, 0, 0, 0.3);
 }
-main .navbar-brand{
-  display: none;
-}
 main .nav-link:hover{
   color: white !important;
 }
 .content{
   text-align: justify;
 }
-.h1-responsive{
-  margin: 1%;
-  padding: 1%;
-  background: #546e7a;
-  border-radius: 5px;
-  box-shadow: 0 1px 1px rgba(158, 158, 158, 0.7) inset, 0 1px 0 rgba(255,255,255,.2);
-}
 .view{
   background: #546e7a;
 }
 .dropdown-menu{
-  width: 50vw;
+  width: 30em;
+}
+.dropdown-item{
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
 .paginator{
   margin-top: 1%;
@@ -92,79 +80,79 @@ main .nav-link:hover{
   right: 0;
   cursor: pointer;
 }
-.media img{
-  height: 10%;
-  width: 10%;
-}
 .img-fruid{
   height: 100%;
   width: 100%;
 }
-.dropdown-item{
-  margin: 0;
-  padding: 0;
-  width: 50%;
+.media{
+  font-size: 0.8em;
 }
-.date{
-  font-size: 0.7em;
+.nav-tabs{
+  background: #263238;
+  font-size: 0.8em;
+}
+.avatar-img{
+  width: 100%;
 }
 .md-textarea{
   width: 100%;
+}
+input{
+  width: 24em;
 }
 .years{
   display: grid;
   grid-template-columns: repeat(6,1fr);
 }
-.dropdown-item{
-  width: 100%;
-  margin: auto;
-  text-align: center;
-}
 
 
 @media screen and (min-width: 1500px){
   body{
-    margin-top: 8%;
+    margin-top: 8em;
     background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_1920x1200.jpg');
   }
-  .dropdown-menu{
-    width: 45vh;
+  input{
+    width: 29em;
   }
 }
 
-@media screen and (max-width: 990px){
+@media screen and (max-width: 1024px){
   body{
-    margin-top: 13%;
     background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_1024x600.jpg');
   }
+  .category .nav-item{
+    font-size: 0.7em;
+  }
   .dropdown-menu{
-    width: 95vw;
+    width: 25em;
+  }
+  .dropdown-item{
+    width: 90%;
+    font-size: 0.7em !important;
+  }
+  input{
+    width: 19em;
   }
 }
 
 @media screen and (max-width: 768px){
   body{
-    margin-top: 16%;
+    margin-top: 6em;
     background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_800x600.jpg');
   }
   .dropdown-menu{
-    width: 94vw;
+    width: 20em;
   }
-  .dropdown-item{
-    width: 85%;
+  .category .nav-item{
+    margin: 0.5% 25% !important;
   }
-}
-
-@media screen and (max-width: 600px){
-  body{
-    margin-top: 20%;
-    background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_800x600.jpg');
+  input{
+    width: 14em;
   }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 480px){
   body{
-    margin-top: 30%;
     background-image: url('https://images.wallpaperscraft.ru/image/fon_tekstura_poverhnost_temnyy_bukvy_50343_480x800.jpg');
   }
 }
