@@ -53,9 +53,7 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-DEFAULT_FROM_EMAIL = 'viktorkozachok21@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -97,15 +95,6 @@ WSGI_APPLICATION = 'RestFilm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ViktorKozachok$RestFilm',
-        'USER': 'ViktorKozachok',
-        'PASSWORD': 'viktor-21',
-        'HOST': 'ViktorKozachok.mysql.pythonanywhere-services.com',
-    }
-}
 
 #DATABASES = {
 #    'default': {

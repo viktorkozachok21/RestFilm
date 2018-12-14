@@ -10,7 +10,7 @@ class Film(models.Model):
     title = models.CharField(max_length=255,blank=False,null=False)
     film_url = models.CharField(max_length=255,blank=False,null=False)
     trailer_url = models.CharField(max_length=255,blank=False,null=False)
-    top = models.BigIntegerField()
+    top = models.BigIntegerField(default=1)
     photo = models.ImageField(upload_to='film_images')
     description = HTMLField('Description')
     content = HTMLField('Content')

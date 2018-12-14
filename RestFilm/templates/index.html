@@ -15,7 +15,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-130790408-1');
     </script>
     <meta charset="utf-8">
@@ -37,7 +36,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top justify-content-between scrolling-navbar">
-      <a class="navbar-brand waves-effect" href="{% url 'home' %}" title="RestFilm - {% trans "movies in HD quality online" %}">
+      <a class="navbar-brand px-3 pb-0 waves-effect" href="{% url 'home' %}" title="RestFilm - {% trans "movies in HD quality online" %}">
         <h1>RestFilm</h1>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,14 +46,14 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             {% trans "Novelty" as Novelty %}
-            <a class="nav-link active" href="{% url 'filter' slug=Novelty %}" title="{% trans " New films" %}">{% trans "Novelty" %}</a>
+            <a class="nav-link active" href="{% url 'filter' slug=Novelty %}" title="{% trans "New films" %}">{% trans "Novelty" %}</a>
           </li>
           <li class="nav-item">
             {% trans "Popular" as Popular %}
-            <a class="nav-link" href="{% url 'filter' slug=Popular %}" title="{% trans " Popular films" %}">{% trans "Popular" %}</a>
+            <a class="nav-link" href="{% url 'filter' slug=Popular %}" title="{% trans "Popular films" %}">{% trans "Popular" %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" {% block random_movie %}{% endblock %} title="{% trans " Random film" %}">{% trans "Random" %}</a>
+            <a class="nav-link" {% block random_movie %}{% endblock %} title="{% trans "Random film" %}">{% trans "Random" %}</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link " id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Years" %}</a>
@@ -96,17 +95,17 @@
       </ul>
         <form class="form-inline" action="{% url 'filter' slug='result' %}" method="get">
           <div class="md-form my-0">
-            <input class="form-control mr-sm-2" name="search" type="text" placeholder="{% trans " Search" %}" title="{% trans " Search" %}" aria-label="{% trans " Search" %}">
+            <input class="form-control mr-sm-auto" name="search" type="text" placeholder="{% trans " Search" %}" title="{% trans " Search" %}" aria-label="{% trans " Search" %}">
           </div>
         </form>
         <ul class="navbar-nav ml-auto nav-flex-icons">
           <li class="nav-item d-flex">
             {% if user.is_authenticated %}
-            <a href="" class="nav-link waves-effect waves-light" title="{% trans " Account" %}" data-toggle="modal" data-target="#elegantModalForm">
+            <a href="" class="nav-link waves-effect" title="{% trans " Account" %}" data-toggle="modal" data-target="#elegantModalForm">
               <i class="fa fa-user"></i>
             </a>
             {% else %}
-            <a href="{% url 'signin' %}" class="nav-link waves-effect waves-light" title="{% trans " Account" %}">
+            <a href="{% url 'signin' %}" class="nav-link waves-effect" title="{% trans " Account" %}">
               <i class="fa fa-user"></i>
             </a>
             {% endif %}
@@ -117,7 +116,7 @@
             <form action="{% url 'set_language' %}" method="post"> {% csrf_token %}
               <input name="next" type="hidden" value="{{ request.get_current_url }}" />
               <input name="language" type="hidden" value="{{ language.code }}" />
-              <button type="submit" style="background-color: #7777;" class="btn nav-link waves-effect waves-light" title="{% trans " Language for the site" %}">
+              <button type="submit" style="background-color: #7777;" class="btn p-2 nav-link waves-effect waves-light" title="{% trans " Language for the site" %}">
                 <span>{{ language.code|upper }}</span>
               </button>
             </form>
@@ -130,7 +129,7 @@
   </header>
 
   <main>
-    <article class="categories mx-1 mb-3">
+    <article class="categories mb-3">
       <nav class="navbar navbar-expand-lg d-flex justify-content-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nextNav" aria-controls="nextNav" aria-expanded="false" aria-label="Toggle navigation">
           <p class="waves-effect"><i class="fa fa-plus mr-2"></i> {% trans "Сategories" %}</p>
@@ -138,63 +137,63 @@
         <div class="collapse category navbar-collapse text-center justify-content-center" id="nextNav">
           <ul class="navbar-nav">
             <div class="row d-flex justify-content-center">
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Detective" as Detective %}
                 <a href="{% url 'filter' slug=Detective %}" class="nav-link text-center">{% trans "Detective" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Action" as Action %}
                 <a href="{% url 'filter' slug=Action %}" class="nav-link">{% trans "Action" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Comedy" as Comedy %}
                 <a href="{% url 'filter' slug=Comedy %}" class="nav-link">{% trans "Comedy" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Drama" as Drama %}
                 <a href="{% url 'filter' slug=Drama %}" class="nav-link">{% trans "Drama" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Adventures" as Adventures %}
                 <a href="{% url 'filter' slug=Adventures %}" class="nav-link">{% trans "Adventures" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Family" as Family %}
                 <a href="{% url 'filter' slug=Family %}" class="nav-link">{% trans "Family" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Fantasy" as Fantasy %}
                 <a href="{% url 'filter' slug=Fantasy %}" class="nav-link">{% trans "Fantasy" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Musical" as Musical %}
                 <a href="{% url 'filter' slug=Musical %}" class="nav-link">{% trans "Musical" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Biography" as Biography %}
                 <a href="{% url 'filter' slug=Biography %}" class="nav-link">{% trans "Biography" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Hystory" as Hystory %}
                 <a href="{% url 'filter' slug=Hystory %}" class="nav-link">{% trans "Hystory" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
-                {% trans "Documentary" as Documentary %}
-                <a href="{% url 'filter' slug=Documentary %}" class="nav-link">{% trans "Documentary" %}</a>
+              <li class="nav-item col-md-2 m-1 waves-effect">
+                {% trans "Cartoon" as Cartoon %}
+                <a href="{% url 'filter' slug=Cartoon %}" class="nav-link">{% trans "Cartoon" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Thriller" as Thriller %}
                 <a href="{% url 'filter' slug=Thriller %}" class="nav-link">{% trans "Thriller" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 bblock-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Sport" as Sport %}
                 <a href="{% url 'filter' slug=Sport %}" class="nav-link">{% trans "Sport" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Horror" as Horror %}
                 <a href="{% url 'filter' slug=Horror %}" class="nav-link">{% trans "Horror" %}</a>
               </li>
-              <li class="nav-item col-md-2 m-1 block-example border border-dark waves-effect">
+              <li class="nav-item col-md-2 m-1 waves-effect">
                 {% trans "Melodrama" as Melodrama %}
                 <a href="{% url 'filter' slug=Melodrama %}" class="nav-link">{% trans "Melodrama" %}</a>
               </li>
@@ -213,7 +212,7 @@
       <div class="container">
         <div class="row py-4 d-flex align-items-center">
           <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0">{% trans "Get connected with us on social networks!" %}</h6>
+            <h5 class="mb-0">{% trans "Get connected with us on social networks!" %}</h5>
           </div>
           <div class="col-md-6 col-lg-7 text-center text-md-right">
             <a href="https://www.facebook.com/profile.php?id=100005301400930" class="fb-ic" title="Facebook">
@@ -234,22 +233,22 @@
     </div>
     <div class="container text-center text-md-left mt-5">
       <div class="row mt-3">
-        <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mb-4">
-          <h6 class="text-uppercase font-weight-bold">
+        <div class="col-md-5 col-lg-5 col-xl-5 mx-auto">
+          <h5 class="text-uppercase font-weight-bold">
             <a class="grey-text">
               About us
             </a>
-          </h6>
-          <hr class="green accent-2 mb-1 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          </h5>
+          <hr class="green accent-2 mb-1 mt-0 d-inline-block mx-auto" style="width: 100px;">
           <p>{% trans "In today's world, watching movies online has become very relevant. Over the years, the world has seen thousands of tapes, and the cinema still does not cease to amaze the viewer. RestFilm is an online cinema, a place where you can watch movies online. A collection of movies is available to everyone. How to watch, where to watch, who to watch, what to watch or to whom to watch - all this is your problems. We only provide quality material that we want to share, because we are just like you like cinema." %}</p>
         </div>
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <h6 class="text-uppercase font-weight-bold">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
+          <h5 class="text-uppercase font-weight-bold">
             <a href="{% url 'contact' %}" class="grey-text">
               Contact
             </a>
-          </h6>
-          <hr class="green accent-2 mb-1 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          </h5>
+          <hr class="green accent-2 mb-1 mt-0 d-inline-block mx-auto" style="width: 100px;">
           <p>
             <i class="fa fa-home mr-3"></i> {% trans "Rivne" %}</p>
           <p>
@@ -261,17 +260,17 @@
     </div>
   </footer>
 
-  <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="elegantModalForm" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <img src="{% static 'img/images/user-man.png' %}" alt="{% trans " Avatar" %}" class="rounded-circle w-30 h-30 unique-color-dark img-responsive">
+          <img src="{% static 'img/images/user-man.png' %}" alt="{% trans " Avatar" %}" class="rounded-circle unique-color-dark img-responsive">
         </div>
-        <div class="modal-body text-center mb-1">
-          <h5 class="mt-1 mb-1">{{ user.username }}</h5>
+        <div class="modal-body text-center">
+          <h3>{{ user.username }}</h3>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button class="btn w-50 btn-dark p-2 lighten-1" type="submit"><a class="nav-link white-text" href="{% url 'userlogout' %}" title="{% trans " Log out" %}">{% trans "Log out" %}</a></button>
+          <button class="btn w-50 btn-dark p-2 lighten-1" type="submit"><a class="nav-link white-text" href="{% url 'userlogout' %}" title="{% trans "Log out" %}">{% trans "Log out" %}</a></button>
         </div>
       </div>
     </div>

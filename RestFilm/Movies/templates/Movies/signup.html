@@ -23,8 +23,7 @@ href="{% url 'watch' slug=random_movie %}"
       <div class="m-3">
         {% if messages %}
         <ul class="navbar-nav text-danger messages">{% for message in messages %}
-          <li class="nav-item" {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-            <h1>{{ message }}</h1>
+          <li class="nav-item" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
           </li>
           {% endfor %}</ul>
         {% endif %}
@@ -38,7 +37,7 @@ href="{% url 'watch' slug=random_movie %}"
           {{ field }}
         </div>
         {% for error in field.errors %}
-        <p style="color: red">{{ error }}</p>
+        <p style="color: red; font-size: 0.7em;">{{ error }}</p>
         {% endfor %}
       </div>
       {% endfor %}
