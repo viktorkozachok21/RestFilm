@@ -104,6 +104,20 @@ input{
   display: grid;
   grid-template-columns: repeat(6,1fr);
 }
+.content-header{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 1%;
+}
+.film-name h3{
+  background: rgba(62, 69, 81, 0.5);
+  font-weight: bold;
+  border-radius: 10px;
+}
+.film-name p{
+  font-size: 0.5em;
+}
 
 
 @media screen and (min-width: 1500px){

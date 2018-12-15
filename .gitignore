@@ -3,7 +3,6 @@ __pycache__
 venv
 db.sqlite3
 /media_cdn
-/migrations
 /static_cdn
 settings_secret.py
 .DS_Store

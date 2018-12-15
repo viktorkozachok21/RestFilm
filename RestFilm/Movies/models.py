@@ -7,11 +7,13 @@ from tinymce import HTMLField
 class Film(models.Model):
 
     film_name = models.CharField(max_length=255,blank=False,null=False)
+    header_photo = models.ImageField(upload_to='film_images')
+    year = models.IntegerField()
     title = models.CharField(max_length=255,blank=False,null=False)
     film_url = models.CharField(max_length=255,blank=False,null=False)
     trailer_url = models.CharField(max_length=255,blank=False,null=False)
     top = models.BigIntegerField(default=1)
-    photo = models.ImageField(upload_to='film_images')
+    film_photo = models.ImageField(upload_to='film_images')
     description = HTMLField('Description')
     content = HTMLField('Content')
     created_on = models.DateTimeField(auto_now_add=True)
@@ -41,7 +43,7 @@ class Comment(models.Model):
 class News(models.Model):
 
     title = models.CharField(max_length=255,blank=False,null=False)
-    photo = models.ImageField(upload_to='news_images')
+    news_photo = models.ImageField(upload_to='news_images')
     content = HTMLField('Content')
     created_on = models.DateTimeField(auto_now_add=True)
 

@@ -22,7 +22,7 @@ href="{% url 'watch' slug=random_movie %}"
     <div class="col-lg-2 col-md-6 mb-3 d-flex justify-content-center">
       <div class="view p-1 overlay rounded z-depth-2">
         <a href="{% url 'watch' slug=film.title %}" title="{{ film.film_name }}">
-          <img src="{{ film.photo.url }}" class="img-fluid" alt="{{ film.film_name }}">
+          <img src="{{ film.film_photo.url }}" class="img-fluid" alt="{{ film.film_name }}">
           <div class="mask flex-center rgba-black-strong">
             <p class="white-text"><i class="fa fa-play-circle" style="font-size: 5em;"></i></p>
           </div>
@@ -64,11 +64,11 @@ href="{% url 'watch' slug=random_movie %}"
     {% for news in news_list %}
     <div class="card mb-1">
       <div class="card-header lighten-3 z-depth-1" role="tab" id="heading{{ news.id }}">
-        <h4 class="text-uppercase mb-0 py-1">
+        <h6 class="text-uppercase mb-0 py-1">
           <a class="font-weight-bold" data-toggle="collapse" href="#collapse{{ news.id }}" aria-expanded="true" aria-controls="collapse96">
             {{ news.title }}
           </a>
-        </h4>
+        </h6>
       </div>
       <div id="collapse{{ news.id }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ news.id }}" data-parent="#accordionEx1">
         <div class="card-body">

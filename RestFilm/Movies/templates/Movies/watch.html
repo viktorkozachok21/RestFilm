@@ -16,40 +16,35 @@
 href="{% url 'watch' slug=random_movie %}"
 {% endblock %}
 
+{% block categories %}
+style="display: none;"
+{% endblock %}
+
 {% block content %}
 <article class="mb-4">
-  <div class="card news-card">
-    <div class="card-header special-color right-side-meta mb-1">
-      <h2 class="teal-text">{{ movie.film_name }}</h2>
+  <div class="content-header" style="background-image: url('{{ movie.header_photo.url }}');">
+    <div class="row p-5">
+      <div class="col-md-7 film-name">
+        <h3 class="text-light pt-2 pb-1">{{ movie.film_name }} <p>{{ movie.year }}</p> </h3>
+      </div>
+      <div class="col-md-5 film-trailer">
+        <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item px-1" src="{{ movie.trailer_url }}?rel=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="card news-card">
     <div class="card-body row">
       <div class="col-md-3 avatar">
-        <img src="{{ movie.photo.url }}" class="avatar-img z-depth-1-half mr-3">
+        <img src="{{ movie.film_photo.url }}" class="avatar-img z-depth-1-half mr-3">
       </div>
       <div class="col-md content p-3">{{ movie.description|safe }}</div>
     </div>
     <div class="card-footer content p-3">{{ movie.content|safe }}</div>
-    <div class="card-footer content">
-      <ul class="nav nav-tabs md-tabs tabs-2 darken-3 pt-1 mx-1" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active black-text" data-toggle="tab" href="#Movie" role="tab"><i class="fa fa-caret-square-o-right mr-1"></i>
-            {% trans "Online" %}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link black-text" data-toggle="tab" href="#Trailer" role="tab"><i class="fa fa-file-video-o mr-1"></i>
-            {% trans "Trailer" %}</a>
-        </li>
-      </ul>
-
+    <div class="card-footer content px-5">
       <div class="embed-responsive embed-responsive-16by9">
-        <div class="tab-content">
-          <div class="tab-pane fade in show active" id="Movie" role="tabpanel">
-            <iframe class="embed-responsive-item px-1" src="{{ movie.film_url }}" allowfullscreen></iframe>
-          </div>
-          <div class="tab-pane fade" id="Trailer" role="tabpanel">
-            <iframe class="embed-responsive-item px-1" src="{{ movie.trailer_url }}" allowfullscreen></iframe>
-          </div>
-        </div>
+            <iframe class="embed-responsive-item" src="{{ movie.film_url }}" allowfullscreen></iframe>
       </div>
     </div>
 
