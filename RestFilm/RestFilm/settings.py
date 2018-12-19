@@ -139,7 +139,7 @@ TINYMCE_DEFAULT_CONFIG = {
 'statusbar': True,
 }
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'uk'
 
 LANGUAGES = (
     ('uk', gettext(u'Укр')),
