@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-14 18:49+0200\n"
+"POT-Creation-Date: 2018-12-19 12:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,12 +42,23 @@ msgid "Message"
 msgstr "Повідомлення"
 
 #: RestFilm/Movies/templates/Movies/home.html:7
-#: RestFilm/templates/index.html:25
+#: RestFilm/templates/index.html:243
 msgid ""
-"movies, serials, cartoons, online, watch, ukrainian, free, HD 720, HD 1080"
+"In today's world, watching movies online has become very relevant. Over the "
+"years, the world has seen thousands of tapes, and the cinema still does not "
+"cease to amaze the viewer. RestFilm is an online cinema, a place where you "
+"can watch movies online. A collection of movies is available to everyone. "
+"How to watch, where to watch, who to watch, what to watch or to whom to "
+"watch - all this is your problems. We only provide quality material that we "
+"want to share, because we are just like you like cinema."
 msgstr ""
-"фільми, серіали, мультфільми, онлайн, дивитися, українсько, безкоштовно, HD "
-"720, HD 1080"
+"У сучасному світі дивитися фільми онлайн стало дуже актуально. За ці роки "
+"світ побачило тисячі стрічок, а кінематограф й досі не перестає дивувати "
+"глядача. RestFilm - це інтернет кінотеатр, місце, де можна дивитися кіно "
+"онлайн. Колекція кінострічок є доступною для кожного. Як дивитися, де "
+"дивитися, з ким дивитися, що саме дивитися або ж на кого дивитися - все це "
+"вже Ваші проблеми. Ми тільки надаємо якісний матеріал, яким хочемо "
+"поділитися, адже ми так само, як і Ви любимо кінематограф."
 
 #: RestFilm/Movies/templates/Movies/send.html:7
 #: RestFilm/Movies/templates/Movies/send.html:11
@@ -101,27 +112,19 @@ msgstr "Реєстрація"
 msgid "Register"
 msgstr "Підтвердити"
 
-#: RestFilm/Movies/templates/Movies/watch.html:36
-msgid "Online"
-msgstr "Онлайн"
-
-#: RestFilm/Movies/templates/Movies/watch.html:40
-msgid "Trailer"
-msgstr "Трейлер"
-
-#: RestFilm/Movies/templates/Movies/watch.html:69
+#: RestFilm/Movies/templates/Movies/watch.html:64
 msgid "Comment"
 msgstr "Коментар"
 
-#: RestFilm/Movies/templates/Movies/watch.html:76
+#: RestFilm/Movies/templates/Movies/watch.html:71
 msgid "Add comment"
 msgstr "Додати коментар"
 
-#: RestFilm/Movies/templates/Movies/watch.html:81
+#: RestFilm/Movies/templates/Movies/watch.html:76
 msgid "Cancel"
 msgstr "Відміна"
 
-#: RestFilm/Movies/templates/Movies/watch.html:82
+#: RestFilm/Movies/templates/Movies/watch.html:77
 msgid "Reply"
 msgstr "Додати"
 
@@ -147,17 +150,24 @@ msgstr "Нічого не знайдено"
 msgid "Sorry, login or password was invalid. Please try again."
 msgstr "На жаль, логін або пароль недійсні. Будь ласка спробуйте ще раз."
 
-#: RestFilm/RestFilm/settings.py:167
+#: RestFilm/RestFilm/settings.py:145
 msgid "Укр"
 msgstr "Укр"
 
-#: RestFilm/RestFilm/settings.py:168
+#: RestFilm/RestFilm/settings.py:146
 msgid "Анг"
 msgstr "Анг"
 
 #: RestFilm/templates/index.html:23 RestFilm/templates/index.html:39
 msgid "movies in HD quality online"
 msgstr "фільми в HD якості онлайн"
+
+#: RestFilm/templates/index.html:25
+msgid ""
+"movies, serials, cartoons, online, watch, ukrainian, free, HD 720, HD 1080"
+msgstr ""
+"фільми, серіали, мультфільми, онлайн, дивитися, українсько, безкоштовно, HD "
+"720, HD 1080"
 
 #: RestFilm/templates/index.html:49
 msgid "New films"
@@ -212,7 +222,7 @@ msgid "Drama"
 msgstr "Драма"
 
 #: RestFilm/templates/index.html:157 RestFilm/templates/index.html:158
-msgid "Adventures"
+msgid "Adventure"
 msgstr "Пригоди"
 
 #: RestFilm/templates/index.html:161 RestFilm/templates/index.html:162
@@ -232,7 +242,7 @@ msgid "Biography"
 msgstr "Біографія"
 
 #: RestFilm/templates/index.html:177 RestFilm/templates/index.html:178
-msgid "Hystory"
+msgid "History"
 msgstr "Історія"
 
 #: RestFilm/templates/index.html:181 RestFilm/templates/index.html:182
@@ -252,30 +262,12 @@ msgid "Horror"
 msgstr "Жахи"
 
 #: RestFilm/templates/index.html:197 RestFilm/templates/index.html:198
-msgid "Melodrama"
+msgid "Romance"
 msgstr "Мелодрама"
 
 #: RestFilm/templates/index.html:215
 msgid "Get connected with us on social networks!"
 msgstr "Приєднуйся до нас в соц. мережах!"
-
-#: RestFilm/templates/index.html:243
-msgid ""
-"In today's world, watching movies online has become very relevant. Over the "
-"years, the world has seen thousands of tapes, and the cinema still does not "
-"cease to amaze the viewer. RestFilm is an online cinema, a place where you "
-"can watch movies online. A collection of movies is available to everyone. "
-"How to watch, where to watch, who to watch, what to watch or to whom to "
-"watch - all this is your problems. We only provide quality material that we "
-"want to share, because we are just like you like cinema."
-msgstr ""
-"У сучасному світі дивитися фільми онлайн стало дуже актуально. За ці роки "
-"світ побачило тисячі стрічок, а кінематограф й досі не перестає дивувати "
-"глядача. RestFilm - це інтернет кінотеатр, місце, де можна дивитися кіно "
-"онлайн. Колекція кінострічок є доступною для кожного. Як дивитися, де "
-"дивитися, з ким дивитися, що саме дивитися або ж на кого дивитися - все це "
-"вже Ваші проблеми. Ми тільки надаємо якісний матеріал, яким хочемо "
-"поділитися, адже ми так само, як і Ви любимо кінематограф."
 
 #: RestFilm/templates/index.html:253
 msgid "Rivne"
@@ -292,3 +284,9 @@ msgstr "Вийти"
 #: RestFilm/templates/index.html:280
 msgid " Go top"
 msgstr "Вгору"
+
+#~ msgid "Online"
+#~ msgstr "Онлайн"
+
+#~ msgid "Trailer"
+#~ msgstr "Трейлер"
